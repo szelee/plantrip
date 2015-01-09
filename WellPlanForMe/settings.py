@@ -5,6 +5,8 @@ Django settings for WellPlanForMe project.
 from os import path
 from unipath import Path
 
+import os
+
 PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
 
 
@@ -81,7 +83,8 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = path.join(PROJECT_ROOT, 'static').replace('\\', '/')
+STATIC_ROOT = None
+#path.join(PROJECT_ROOT, 'static').replace('\\', '/')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -89,6 +92,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    ('assets', 'D:/Django Projects/WellPlanForMe/static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -131,6 +135,7 @@ PROJECT_DIR = Path(__file__).ancestor(3)
 
 TEMPLATE_DIRS = (
     PROJECT_DIR.child("allauth").child("templates"),
+    [os.path.join(PROJECT_DIR, 'templates')],
     # Put strings here, like "/home/html/django_templates" or
     # "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -165,6 +170,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'trips',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

@@ -1,0 +1,14 @@
+﻿{% extends "trips/layout.html" %}
+
+{% block content %}
+<h2>Start your journey here</h2>
+
+<form action="/trip/create" method="post">{% csrf_token %}
+<ul>
+{{ form.as_ul }}
+</ul>
+
+<input type="submit" name="submit" value="Create Trip"
+</form>
+
+{% endblock %}

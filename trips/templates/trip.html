@@ -1,0 +1,32 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Your recent trip</h2>
+
+{% if trips.count > 0 %}
+<div>
+  <table>
+      <tr>
+          <th>Name</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Description</th>
+      </tr>
+{% for trip in trips %}
+    <tr>
+        <td>{{ trip.name }}</td>
+        <td>{{ trip.start_datetime }}</td>
+        <td>{{ trip.end_datetime }}</td>
+        <td>{{ trip.description }}</td>
+    </tr>
+{% endfor %}
+</table>
+</div>
+{% else %}
+
+<p>No trip found</p>
+
+{% endif %}
+
+{% endblock %}
