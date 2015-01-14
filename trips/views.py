@@ -7,12 +7,14 @@ from trips.forms import ReservationForm, TripForm
 from django.core.context_processors import csrf
 from django.template import RequestContext
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def alltrips(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'trip.html',
+        'trips/trip.html',
         context_instance = RequestContext(request,
         {
             'title':'Trips',
@@ -22,9 +24,7 @@ def alltrips(request):
         })
     )
 
-    #return render_to_response('trip.html',
-    #                          {'trips': Trip.objects.all()})
-
+@login_required
 def createtrip(request):
     if request.POST:
         form = TripForm(request.POST)
@@ -34,8 +34,19 @@ def createtrip(request):
     else:
         form = TripForm()
 
-    args = {}
-    args.update(csrf(request))
-    args['form'] = form
-
-    return render_to_response('create_trip.html', args)
+    #args = {}
+    #args.update(csrf(request))
+    #args['form'] = form
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'trips/create_trip.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'Start Here',
+            'message':'Plan your trip here',
+            'form': form,
+            'year':datetime.now().year,
+        })
+    )
+    #return render_to_response('trips/create_trip.html', args)

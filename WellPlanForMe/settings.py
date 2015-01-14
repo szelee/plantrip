@@ -5,8 +5,6 @@ Django settings for WellPlanForMe project.
 from os import path
 from unipath import Path
 
-import os
-
 PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
 
 
@@ -34,7 +32,8 @@ DATABASES = {
     }
 }
 
-LOGIN_URL = '/login'
+LOGIN_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = '/user/profile'
 #ACCOUNT_AUTHENTICATION_METHOD = "email"
 SOCIALACCOUNT_QUERY_EMAIL = True
 SOCIALACCOUNT_PROVIDERS = \
@@ -72,7 +71,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = path.join(PROJECT_ROOT, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -135,7 +134,7 @@ PROJECT_DIR = Path(__file__).ancestor(3)
 
 TEMPLATE_DIRS = (
     PROJECT_DIR.child("allauth").child("templates"),
-    [os.path.join(PROJECT_DIR, 'templates')],
+    path.join(PROJECT_ROOT, 'templates').replace('\\','/'),
     # Put strings here, like "/home/html/django_templates" or
     # "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -171,6 +170,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'app',
     'trips',
+    'userprofile',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

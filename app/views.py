@@ -26,6 +26,8 @@ def home(request):
 def contact(request):
     """Renders the contact page."""
     assert isinstance(request, HttpRequest)
+    form = ContactForm()
+
     return render(
         request,
         'app/contact.html',
@@ -33,13 +35,10 @@ def contact(request):
         {
             'title':'Customer Service',
             'message':'We are here for you',
-            'contact': ContactUs.objects.all(),
             'year':datetime.now().year,
+            'form': form,
         })
     )
-    #return render_to_response('app/contact.html',
-    #                          {'contact' : ContactUs.objects.all()}
-    #                          )
 
 def about(request):
     """Renders the about page."""

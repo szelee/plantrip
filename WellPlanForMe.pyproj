@@ -35,6 +35,15 @@
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="manage.py" />
+    <Compile Include="processemail\googleapi.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="processemail\retriever.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="processemail\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="trips\forms.py">
       <SubType>Code</SubType>
     </Compile>
@@ -42,6 +51,13 @@
     <Compile Include="trips\tests.py" />
     <Compile Include="trips\views.py" />
     <Compile Include="trips\__init__.py" />
+    <Compile Include="userprofile\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="userprofile\models.py" />
+    <Compile Include="userprofile\tests.py" />
+    <Compile Include="userprofile\views.py" />
+    <Compile Include="userprofile\__init__.py" />
     <Compile Include="WellPlanForMe\__init__.py" />
     <Compile Include="WellPlanForMe\settings.py" />
     <Compile Include="WellPlanForMe\urls.py" />
@@ -57,6 +73,10 @@
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
+    <Folder Include="media\" />
+    <Folder Include="media\profile_images\" />
+    <Folder Include="processemail\" />
+    <Folder Include="processemail\emails\" />
     <Folder Include="templates\" />
     <Folder Include="static\" />
     <Folder Include="static\css\" />
@@ -66,6 +86,9 @@
     <Folder Include="trips\" />
     <Folder Include="trips\templates\" />
     <Folder Include="trips\templates\trips\" />
+    <Folder Include="userprofile\" />
+    <Folder Include="userprofile\templates\" />
+    <Folder Include="userprofile\templates\userprofile\" />
     <Folder Include="WellPlanForMe\" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +133,7 @@
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="static\images\bath.JPG" />
     <Content Include="static\images\leeds_castle-small.jpg" />
+    <Content Include="userprofile\templates\userprofile\index.html" />
     <None Include="static\scripts\_references.js" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
@@ -126,10 +150,9 @@
     <Content Include="static\scripts\respond.js" />
     <Content Include="static\scripts\respond.min.js" />
     <Content Include="templates\layout.html" />
-    <Content Include="trips\templates\create_trip.html" />
-    <Content Include="trips\templates\index.html" />
-    <Content Include="trips\templates\layout.html" />
-    <Content Include="trips\templates\trip.html" />
+    <Content Include="trips\templates\trips\create_trip.html" />
+    <Content Include="trips\templates\trips\index.html" />
+    <Content Include="trips\templates\trips\trip.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.mht">

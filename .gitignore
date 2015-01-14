@@ -6,6 +6,12 @@
 *.user
 *.sln.docstates
 
+#python compiled
+*.pyc
+
+#test result
+processemail/emails
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -187,3 +193,4 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+
