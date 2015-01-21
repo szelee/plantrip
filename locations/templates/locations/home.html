@@ -14,21 +14,21 @@
             </thead>
             <tbody>
         {% for item in shop %}
-            {% for key, value in item.items %}   
+            {% for key, value in item.items %}
                 {% if key == 'name' %}
                 <tr> 
                     <td>{{ value }}</td>
                 {% endif %}
                 {% if key == 'categories' %}
-                    <td>
+                        <td>
                     {% for sub in value %}
                         {% for key, value in sub.items %}
                             {% if key == 'shortName' %}
-                            {{ value }}
+                                {{ value }}
                             {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                    </td>
+                         {% endfor %}
+                     {% endfor %}
+                     </td>
                 </tr>
                 {% endif %}
             {% endfor %}

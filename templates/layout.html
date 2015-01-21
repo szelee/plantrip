@@ -10,9 +10,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/site.css' %}" />
     <script src="{% static 'assets/scripts/modernizr-2.6.2.js' %}"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 </head>
 
-<body>
+<body onload="initialize()">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -29,8 +30,15 @@
                     <li><a href="{% url 'about' %}">About Us</a></li>
                     <li><a href="{% url 'contact' %}">Customer Service</a></li>
                 </ul>
+                <form class="navbar-form navbar-nav" name="placeform" action="/locations/search" method="post">{% csrf_token %}
+                    <div id="locationField" class="form-group" style="display:inline">
+                        <input class="form-control" id="autocomplete" type="text" size="50" placeholder="Search for a place" onfocus="geolocate()" />
+                        <input type="hidden" name="searchgeoloc" id="geolocation" />
+                        <input type="hidden" name="searchplace" id="places" />
+                    </div>
+                </form>
                 {% include 'app/loginpartial.html' %}
-            </div>
+            </div>            
         </div>
     </div>
 
@@ -45,12 +53,7 @@
     <script src="{% static 'assets/scripts/jquery-1.10.2.js' %}"></script>
     <script src="{% static 'assets/scripts/bootstrap.js' %}"></script>
     <script src="{% static 'assets/scripts/respond.js' %}"></script>
-    <!--script>
-        $('#pills-first a').hover(function (e) {
-          e.preventDefault()
-          $(this).tab('show')
-       });
-    </script-->
+    <script src="{% static 'assets/scripts/google.places.js' %}"></script>
 
 {% block scripts %}{% endblock %}
 

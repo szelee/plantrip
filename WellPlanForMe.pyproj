@@ -149,6 +149,7 @@
     <Content Include="static\images\world_1.jpg" />
     <Content Include="static\images\world_2.jpg" />
     <Content Include="static\images\world_3.jpg" />
+    <Content Include="static\scripts\google.places.js" />
     <Content Include="userprofile\templates\userprofile\index.html" />
     <None Include="static\scripts\_references.js" />
     <Content Include="static\scripts\bootstrap.js" />
