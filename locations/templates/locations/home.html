@@ -1,0 +1,44 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<h2> {{ title }} </h2>
+
+<div>
+    {% if shop %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Place Name</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+        {% for item in shop %}
+            {% for key, value in item.items %}   
+                {% if key == 'name' %}
+                <tr> 
+                    <td>{{ value }}</td>
+                {% endif %}
+                {% if key == 'categories' %}
+                    <td>
+                    {% for sub in value %}
+                        {% for key, value in sub.items %}
+                            {% if key == 'shortName' %}
+                            {{ value }}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                    </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+
+{% endblock %}
+<script>
+  var data = {{ data|safe }};
+</script>

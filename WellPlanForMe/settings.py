@@ -171,6 +171,7 @@ INSTALLED_APPS = (
     'app',
     'trips',
     'userprofile',
+    'locations',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -180,6 +181,7 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.foursquare',
     #'allauth.socialaccount.providers.facebook',
     #'allauth.socialaccount.providers.instagram',
 )

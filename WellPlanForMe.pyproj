@@ -34,6 +34,13 @@
     <Compile Include="app\tests.py" />
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
+    <Compile Include="locations\getlocations.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="locations\models.py" />
+    <Compile Include="locations\tests.py" />
+    <Compile Include="locations\views.py" />
+    <Compile Include="locations\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="processemail\googleapi.py">
       <SubType>Code</SubType>
@@ -73,6 +80,9 @@
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
+    <Folder Include="locations\" />
+    <Folder Include="locations\templates\" />
+    <Folder Include="locations\templates\locations\" />
     <Folder Include="media\" />
     <Folder Include="media\profile_images\" />
     <Folder Include="processemail\" />
@@ -94,6 +104,9 @@
   <ItemGroup>
     <Content Include="app\static\app\images\bath.JPG" />
     <Content Include="app\static\app\images\leeds_castle-small.jpg" />
+    <Content Include="app\templates\app\index - Copy.html" />
+    <Content Include="locations\templates\locations\home.html" />
+    <Content Include="locations\templates\locations\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
@@ -133,6 +146,9 @@
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="static\images\bath.JPG" />
     <Content Include="static\images\leeds_castle-small.jpg" />
+    <Content Include="static\images\world_1.jpg" />
+    <Content Include="static\images\world_2.jpg" />
+    <Content Include="static\images\world_3.jpg" />
     <Content Include="userprofile\templates\userprofile\index.html" />
     <None Include="static\scripts\_references.js" />
     <Content Include="static\scripts\bootstrap.js" />

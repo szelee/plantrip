@@ -23,6 +23,7 @@ class BootstrapAuthenticationForm(AuthenticationForm):
 class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactUs
+        exclude = []
 
     #subject = forms.CharField(max_length=100)
     #message = forms.CharField(widget=forms.Textarea)

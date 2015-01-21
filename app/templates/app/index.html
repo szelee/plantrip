@@ -1,14 +1,55 @@
 {% extends "app/layout.html" %}
+{% load static from staticfiles %}
 
 {% block content %}
-
+<!--
 <div class="jumbotron">
     <h1>Well, PlanForMe</h1>
     <p class="lead">
         Well, PlanForMe is a free virtual travel itinerary planner, which will provide personalised itinerary
         which will save you from spending hours to plan your trip. So, sit back and relax, we will plan for you.</p>
     <p><a href="/trips/create" class="btn btn-primary btn-large">Plan for Me &raquo;</a></p>
-</div>
+</!--div>
+-->
+<div id="carousel-main" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-main" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-main" data-slide-to="1"></li>
+    <li data-target="#carousel-main" data-slide-to="2"></li>
+  </ol>
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <!--img src="http://placehold.it/1200x315" alt="..."-->
+      <img src="{% static 'assets/images/world_1.jpg' %}">
+      <div class="carousel-caption">
+          <h3>Well,PlanForMe suggest according to your preferences</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="{% static 'assets/images/world_2.jpg' %}">
+      <div class="carousel-caption">
+          <h3>Your itinerary will be planned before you start your journey</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="{% static 'assets/images/world_3.jpg' %}">
+      <div class="carousel-caption">
+          <h3>You can experience the true stress free travel even without a tour guide</h3>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-main" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-main" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->
 
 <div class="row">
     <div class="col-md-4">
@@ -16,8 +57,7 @@
         <p>
             Well, PlanForMe provides simple instructions on how to make the service works better for you. Please 
             follow the easy steps to maximise your service.
-        </p>
-        <!--<p><a class="btn btn-default" href="/">Learn more &raquo;</a></p>-->
+        </p>        
     </div>
     <div class="col-md-4">
         <h2>Safe time to plan a trip</h2>
@@ -25,14 +65,13 @@
             With the integration of multiple sources online, we will be able to generate proposed itinerary plan according to your preference.
             You just need to pack and ready for the trip.
         </p>
-        <!--<p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>-->
+        
     </div>
     <div class="col-md-4">
         <h2>Personalised trip</h2>
         <p>
             May be you love food, may be you love visiting museum, we are here to plan you the trip uniquely for you. 
         </p>
-        <!--<p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>-->
     </div>
 </div>
 

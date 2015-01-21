@@ -6,7 +6,6 @@ from django.shortcuts import render, render_to_response
 from django.http import HttpRequest, HttpResponseRedirect
 from django.template import RequestContext
 from datetime import datetime
-from django.core.context_processors import csrf
 from app.forms import ContactForm
 from app.models import ContactUs
 

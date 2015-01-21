@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     url(r'^trips/$', 'trips.views.alltrips', name='all_trips'),
     url(r'^trips/create', 'trips.views.createtrip', name='create_trip'),
     url(r'^user/profile', 'userprofile.views.profile', name='user_profile'),
+    url(r'^locations/(?P<location>\w+)', 'locations.views.search', name='location_search'),
     url(r'^login/$',
         'django.contrib.auth.views.login',
         {
