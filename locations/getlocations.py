@@ -46,14 +46,14 @@ def gplaces_api(location):
     except Exception as e:
         print "Error in gplaces_api def: ", e
 
-def processdata(provider, file_path):
+def get_location(provider, file_path):
     f = open(file_path, 'r')
     data = json.load(f)
 
     if provider == 'foursquare':
         shops = data['response']['venues']
 
-    else provider == 'google':
+    elif provider == 'google':
         shops = data['results']
 
     return shops

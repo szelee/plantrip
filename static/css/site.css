@@ -40,3 +40,82 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.carousel img {
+    left: 0;
+    min-height: 400px;
+    position: relative;
+    top: 0;
+}
+
+
+.container .credit {
+  margin: 20px 0;
+}
+
+.divider {
+	height:50px;
+}
+
+#nav {
+  width: 100%;
+  position:static;
+  top:-32px;
+}
+
+#nav.affix {
+   position: fixed;
+   top: 0;
+   z-index:10;
+   -webkit-transition: all .6s ease-in-out;
+}
+
+.scroll-top {
+   position:fixed;
+   bottom:0;
+   right:6%;
+   z-index:100;
+   background: #f2f3f2;
+   font-size:24px;
+   border-top-left-radius:3px;
+   border-top-right-radius:3px;
+}
+.scroll-top a:link,.scroll-top a:visited {
+  color:#222;
+} 
+section {
+  color: #ffffff;
+  min-height: 400px;
+  height: auto !important;
+  height: 100%;
+  padding-top:100px;
+}
+
+.bg-1 {
+	background: url('../images/background-bath.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+.bg-2 {
+	background: url('../images/background-geneva.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+.bg-3 {
+	background: url('http://www.bootply.com/assets/example/bg_blueplane.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+.bg-4 {
+	padding-top:30px;
+    background-color:#e6e6e6;
+}

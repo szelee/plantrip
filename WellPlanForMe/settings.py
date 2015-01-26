@@ -182,7 +182,8 @@ INSTALLED_APPS = (
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.foursquare',
-    #'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.yelp',
+    'allauth.socialaccount.providers.facebook',
     #'allauth.socialaccount.providers.instagram',
 )
 

@@ -10,12 +10,15 @@ import simplejson, json
 from locations import *
 
 
-def search(request, location):
+def search(request):
+    location = request.POST.get('searchplace')
+    geolocation = request.POST.get('searchgeoloc')
+
     f = open(fsqr_json_file, 'r')
     data = json.load(f)
     shop = data['response']['venues']
     f.close()
-    #data = {'hello': ['world', 'universe']}
+
     assert isinstance(request, HttpRequest)
     return render(
         request,
@@ -23,6 +26,7 @@ def search(request, location):
         context_instance = RequestContext(request,
         {
             'title': location,
+            'message': 'Recommended places gathered from different website',
             'year':datetime.now().year,
             'shop': shop,
         })

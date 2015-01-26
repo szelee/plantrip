@@ -12,6 +12,9 @@
 #test result
 processemail/emails
 
+#virtual environments
+env
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
