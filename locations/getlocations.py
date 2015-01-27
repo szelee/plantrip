@@ -23,8 +23,11 @@ def fsqr_api(location):
         
         if response.status_code == 200:
             timestamp = datetime.utcnow()
-            with open('fsqr_' + location + '_' + '{:%Y%m%d%H%M%S}'.format(timestamp) + '.json', 'w') as outfile:
-                json.dump(response.json(), outfile)
+            #file_name = 'fsqr_' + location + '_' + '{:%Y%m%d%H%M%S}'.format(timestamp) + '.json'
+            #with open(file_name, 'w') as outfile:
+            #    json.dump(response.json(), outfile)
+            #outfile.close()
+            return response.json()
 
     except Exception as e:
         print "Error in fsqr_api def: ", e
@@ -32,29 +35,38 @@ def fsqr_api(location):
 def gplaces_api(location):
     try:
         places_app = SocialApp.objects.get(name='places')
+        print places_app.client_id
+
         payload = {'location': location,
-                   'radius': 1000,
+                   'radius': 500,
                    'key': places_app.client_id}
 
         response = requests.get(GPLACES_BASIC_URL, params=payload)
 
         if response.status_code == 200:
-            timestamp = datetime.utcnow()
-            with open('places_' + location + '_' + '{:%Y%m%d%H%M%S}'.format(timestamp) + '.json', 'w') as outfile:
-                json.dump(response.json(), outfile)
+            #timestamp = datetime.utcnow()
+            #file_name = 'places_' + location + '_' + '{:%Y%m%d%H%M%S}'.format(timestamp) + '.json'
+            #with open(filename, 'w') as outfile:
+            #    json.dump(response.json(), outfile)
+            #outfile.close()
+            return response.json()
 
     except Exception as e:
         print "Error in gplaces_api def: ", e
 
-def get_location(provider, file_path):
-    f = open(file_path, 'r')
-    data = json.load(f)
+def get_location(provider, location):
+    #f = open(file_path, 'r')
+    #data = json.load(f)
 
     if provider == 'foursquare':
+        data = fsqr_api(location)
         shops = data['response']['venues']
 
     elif provider == 'google':
+        data = gplaces_api(location)
         shops = data['results']
+        print data
+        print shops
 
     return shops
 
