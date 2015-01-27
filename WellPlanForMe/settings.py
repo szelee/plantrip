@@ -16,7 +16,7 @@ ALLOWED_HOSTS = (
 )
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    # ('Szelee Lai, 'truedream@outlook.com'),
 )
 
 MANAGERS = ADMINS
@@ -24,11 +24,10 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'wellplanforme',
-        'USER': 'root',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': 'wellplanforme$wellplanforme',
+        'USER': 'wellplanforme',
+        'PASSWORD': 'Sz3L33La123',
+        'HOST': 'mysql.server',
     }
 }
 
@@ -38,7 +37,7 @@ LOGIN_REDIRECT_URL = '/user/profile'
 SOCIALACCOUNT_QUERY_EMAIL = True
 SOCIALACCOUNT_PROVIDERS = \
     { 'google':
-        { 'SCOPE': ['profile', 'email', 'https://www.googleapis.com/auth/gmail.readonly', 
+        { 'SCOPE': ['profile', 'email', 'https://www.googleapis.com/auth/gmail.readonly',
                     'https://www.googleapis.com/auth/userinfo.email',
                     ],
           'AUTH_PARAMS': { 'access_type': 'offline' } }}
@@ -91,7 +90,8 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    ('assets', 'D:/Django Projects/WellPlanForMe/static'),
+    ('assets', '/home/wellplanforme/plantrip/static'),
+    #'https://www.dropbox.com/sh/z97r9ovv8l26nhi/AAC3PeNyaQeYUDxPUZcN1VD0a?dl=0'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -176,7 +176,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
