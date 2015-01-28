@@ -172,6 +172,8 @@
     <Content Include="static\images\ico\apple-touch-icon-57-precomposed.png" />
     <Content Include="static\images\ico\apple-touch-icon-72-precomposed.png" />
     <Content Include="static\images\ico\favicon.ico" />
+    <Content Include="static\images\ldn-canal.jpg" />
+    <Content Include="static\images\london-eye.jpg" />
     <Content Include="static\images\vienna-1.jpg" />
     <Content Include="static\images\world_1.jpg" />
     <Content Include="static\images\world_2.jpg" />

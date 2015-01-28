@@ -29,15 +29,15 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{% url 'home' %}">Start Here</a></li>
                     <li><a href="{% url 'about' %}">About Us</a></li>
-                    <li><a href="{% url 'contact' %}">Customer Service</a></li>
+                    <!--li><a href="{% url 'contact' %}">Customer Service</a></li-->
                 </ul>
-                <form class="navbar-form navbar-nav" name="placeform" action="/locations/search" method="post">{% csrf_token %}
+                <!--form class="navbar-form navbar-nav" name="placeform" action="/locations/search" method="post">{% csrf_token %}
                     <div id="locationField" class="form-group" style="display:inline">
                         <input class="form-control" id="autocomplete" type="text" size="50" placeholder="Search for a place" onfocus="geolocate()" />
                         <input type="hidden" name="searchgeoloc" id="geolocation" />
                         <input type="hidden" name="searchplace" id="places" />
                     </div>
-                </form>
+                </form-->
                 <ul class="nav navbar-nav navbar-right">
                     {% include 'app/loginpartial.html' %}
                 </ul>
