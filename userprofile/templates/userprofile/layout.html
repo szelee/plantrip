@@ -8,13 +8,14 @@
     <title>{{ title }} - Well, PlanForMe</title>
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/site.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap-theme.min.css' %}" />
     <script src="{% static 'assets/scripts/modernizr-2.6.2.js' %}"></script>
-    <script src="{% static 'assets/scripts/jquery-1.10.2.min.js' %}"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 </head>
 
-<body onload="initialize()">
+<body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -26,28 +27,32 @@
                 <a href="/" class="navbar-brand">Well,PlanForMe</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="{% url 'home' %}">Start Here</a></li>
-                    <li><a href="{% url 'about' %}">About Us</a></li>
-                    <!--li><a href="{% url 'contact' %}">Customer Service</a></li-->
-                </ul>
-                <!--form class="navbar-form navbar-nav" name="placeform" action="/locations/search" method="post">{% csrf_token %}
+                <!--form class="navbar-form navbar-nav" name="placeform" action="/locations/search" method="post">
                     <div id="locationField" class="form-group" style="display:inline">
                         <input class="form-control" id="autocomplete" type="text" size="50" placeholder="Search for a place" onfocus="geolocate()" />
                         <input type="hidden" name="searchgeoloc" id="geolocation" />
                         <input type="hidden" name="searchplace" id="places" />
                     </div>
-                </form-->
+                </!--form-->
                 <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_staff %}
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" role="button" class="dropdown-toggle"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu" id="g-account-menu">
+                                <li><a href="/admin">Admin Page</a></li>
+                            </ul>
+                    </li>
+                    {% endif %}
                     {% include 'app/loginpartial.html' %}
                 </ul>
+                
             </div>            
         </div>
     </div>
 
-    <!--div class="container"-->
+    <div class="container-fluid">
 {% block content %}{% endblock %}
-        <!--/div-->
+    </div>
         <hr/>
         <footer class="text-center">
             <p>&copy; {{ year }} - Well,PlanForMe</p>
@@ -58,7 +63,7 @@
     <script src="{% static 'assets/scripts/bootstrap.js' %}"></script>
     <script src="{% static 'assets/scripts/respond.js' %}"></script>
     <script src="{% static 'assets/scripts/google.places.js' %}"></script>
-
+    <script src="{% static 'assets/scripts/scripts.js' %}"></script>
 
 {% block scripts %}{% endblock %}
 
