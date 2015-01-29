@@ -50,74 +50,76 @@ input[type="checkbox"].input-validation-error {
 
 
 .container .credit {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .divider {
-	height:50px;
+    height: 50px;
 }
 
 #nav {
-  width: 100%;
-  position:static;
-  top:-32px;
+    width: 100%;
+    position: static;
+    top: -32px;
 }
 
-#nav.affix {
-   position: fixed;
-   top: 0;
-   z-index:10;
-   -webkit-transition: all .6s ease-in-out;
-}
+    #nav.affix {
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        -webkit-transition: all .6s ease-in-out;
+    }
 
 .scroll-top {
-   position:fixed;
-   bottom:0;
-   right:6%;
-   z-index:100;
-   background: #f2f3f2;
-   font-size:24px;
-   border-top-left-radius:3px;
-   border-top-right-radius:3px;
+    position: fixed;
+    bottom: 0;
+    right: 6%;
+    z-index: 100;
+    background: #f2f3f2;
+    font-size: 24px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
-.scroll-top a:link,.scroll-top a:visited {
-  color:#222;
-} 
+
+    .scroll-top a:link, .scroll-top a:visited {
+        color: #222;
+    }
+
 section {
-  color: #ffffff;
-  min-height: 400px;
-  height: auto !important;
-  height: 100%;
-  padding-top:100px;
+    color: #ffffff;
+    min-height: 400px;
+    height: auto !important;
+    height: 100%;
+    padding-top: 100px;
 }
 
 .bg-1 {
-	background: url('../images/london-1.jpg') no-repeat center center fixed; 
+    background: url('../images/london-1.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .bg-2 {
-	background: url('../images/london-2.jpg') no-repeat center center fixed; 
+    background: url('../images/london-2.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .bg-3 {
-	background: url('http://www.bootply.com/assets/example/bg_blueplane.jpg') no-repeat center center fixed; 
+    background: url('http://www.bootply.com/assets/example/bg_blueplane.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .bg-4 {
-	padding-top:30px;
-    background-color:#e6e6e6;
+    padding-top: 30px;
+    background-color: #e6e6e6;
 }
 
 /* Mobile */
@@ -126,9 +128,10 @@ section {
         height: auto;
         width: 800px;
     }
-    .slider-size > img {
-         width: 80%;
-    }
+
+        .slider-size > img {
+            width: 80%;
+        }
 }
 
 /* tablets */
@@ -137,19 +140,21 @@ section {
         height: auto;
         width: 1000px;
     }
-    .slider-size > img {
-        width: 80%;
-    }
+
+        .slider-size > img {
+            width: 80%;
+        }
 }
 
 /* laptops */
 @media (max-width: 1023px) and (min-width: 992px) {
     .slider-size {
-         height: auto;
+        height: auto;
     }
-    .slider-size > img {
-        width: 100%;
-    }
+
+        .slider-size > img {
+            width: 100%;
+        }
 }
 
 /* desktops */
@@ -157,9 +162,10 @@ section {
     .slider-size {
         height: auto;
     }
-    .slider-size > img {
-        width: 100%;
-    }
+
+        .slider-size > img {
+            width: 100%;
+        }
 }
 
 
@@ -167,6 +173,7 @@ section {
     font-size: 12px;
     width: 12.5%;
 }
+
 .bs-glyphicons li {
     background-color: #f9f9f9;
     border: 1px solid #fff;
@@ -193,22 +200,43 @@ section {
     margin-bottom: 10px;
     margin-top: 5px;
 }
+
 .bs-glyphicons .glyphicon-class {
     display: block;
     text-align: center;
     word-wrap: break-word;
 }
+
 .bs-glyphicons li:hover {
     background-color: #563d7c;
     color: #fff;
 }
+
 @media (min-width: 768px) {
-.bs-glyphicons {
-    margin-left: 0;
-    margin-right: 0;
+    .bs-glyphicons {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+        .bs-glyphicons li {
+            font-size: 12px;
+            width: 12.5%;
+        }
 }
-.bs-glyphicons li {
-    font-size: 12px;
-    width: 12.5%;
+
+.carousel-caption-top {
+    position: absolute;
+    right: 15%;
+    top: 40%;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
 }
-}
+
+    .carousel-caption .btn {
+        text-shadow: none;
+    }
