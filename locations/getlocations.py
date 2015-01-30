@@ -14,7 +14,7 @@ def fsqr_api(location):
 
     try:
         fsqr_app = SocialApp.objects.get(provider='foursquare')
-        payload = {'near': location,
+        payload = {'ll': location,
                    'client_id': fsqr_app.client_id,
                    'client_secret': fsqr_app.secret,
                    'v': '{:%Y%m%d}'.format(today_date)}

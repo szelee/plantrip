@@ -38,7 +38,7 @@
           <img src="{% static 'assets/images/ldn-canal.jpg' %}" class="img-responsive" style="width:100%">
         </div>
         <div class="container center-block">
-      <div class="carousel-caption-top">
+      <div class="carousel-caption">
           <h1 class="center-block">Plan without stress</h1>
           <p><a class="btn btn-primary btn-lg" href="/#section1">Plan For Me</a></p>
       </div>
@@ -54,6 +54,8 @@
   </a>
 </div> <!-- Carousel -->
 
+<!-- Begin to collect data -->
+<form class="form-inline" role="form" action="/locations/search" method="post">{% csrf_token %} 
 <!-- Begin page content -->
 <div class="divider" id="section1"></div>
 
@@ -64,35 +66,26 @@
         </div>
         <p class="lead text-center">
             To have a precise planning for you, please advise your arrival date and departure date in London
-        <table class="col-sm-10 col-sm-offset-1 text-center">
-            <tr>
-                <td>
-            <div class="form-group">
-                <label for="dtp_input1" class="control-label">Arrival</label>
-                <div class="input-group date form_datetime col-md-10"  data-date-format="dd MM yyyy HH:ii p" data-link-field="dtp_input1">
-                    <input class="form-control" type="text" value="" placeholder="Arrival Datetime">
-                    <!--span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span-->
-					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+            <fieldset>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="dtp_input1" class="control-label">Arrival</label>
+                    <div class="input-group date form_datetime "  data-date-format="dd MM yyyy HH:ii p" data-link-field="dtp_input1">
+                        <input class="form-control" type="text" name="dtp_input1" placeholder="Arrival Datetime">
+					    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
                 </div>
-				<input type="hidden" id="dtp_input1" value="" /><br/>
-            </div>
-                </td>
-                <td><input type="hidden" id="dtp_input3" value="" /><br/></td>
-                <td>
-            <div class="form-group">
-                <label for="dtp_input2" class="control-label">Departure</label>
-                <div class="input-group date form_datetime col-md-10" data-date-format="dd MM yyyy HH:ii p" data-link-field="dtp_input2">
-                    <input class="form-control" type="text" value="" placeholder="Departure Datetime">
-                    <!--span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span-->
-					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                <div class="form-group col-md-6">
+                    <label for="dtp_input2" class="control-label">Departure</label>
+                    <div class="input-group date form_datetime" data-date-format="dd MM yyyy HH:ii p" data-link-field="dtp_input2">
+                        <input class="form-control" type="text" name="dtp_input2" placeholder="Departure Datetime">
+					    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
                 </div>
-				<input type="hidden" id="dtp_input2" value="" /><br/>
             </div>
-                </td>
-            </tr>
-        </table>
+            </fieldset>
        </p> 
-        <p class="text-center"><a class="btn btn-primary btn-lg" href="/#section2">Set Preferences</a></p>
+        <div class="text-center"><a class="btn btn-primary btn-lg" href="/#section2">Set Preferences</a></div>
     <hr />
     </div>
         <div class="divider"></div>
@@ -118,54 +111,67 @@
                 <li>
                     <span class="icon-large icon-camera" aria-hidden="true"></span>
                     <span class="glyphicon-class">Vintage Point</span>
+                    <input type="checkbox" name="vintage_point" />
                 </li>
                 <li>
                     <span class="icon-large icon-thumbs-up" aria-hidden="true"></span>
                     <span class="glyphicon-class">Popular</span>
+                    <input type="checkbox" name="popular" />
                 </li>
                 <li>
                     <span class="icon-large icon-bank" aria-hidden="true"></span>
                     <span class="glyphicon-class">Museum</span>
+                    <input type="checkbox" name="museum" />
                 </li>
                 <li>
                     <span class="icon-large icon-cutlery" aria-hidden="true"></span>
                     <span class="glyphicon-class">Restaurant</span>
+                    <input type="checkbox" name="restaurant"  />
                 </li>
                 <li>
                     <span class="icon-large icon-tree-deciduous" aria-hidden="true"></span>
                     <span class="glyphicon-class">Park</span>
+                    <input type="checkbox" name="park" />
                 </li>
                 <li>
                     <span class="icon-large icon-girl" aria-hidden="true"></span>
                     <span class="glyphicon-class">Kids friendly</span>
+                    <input type="checkbox" name="kids" />
                 </li>
                 <li>
                     <span class="icon-large icon-gift" aria-hidden="true"></span>
                     <span class="glyphicon-class">Shopping</span>
+                    <input type="checkbox" name="shopping" />
                 </li>
                 <li>
                     <span class="icon-large icon-beer" aria-hidden="true"></span>
                     <span class="glyphicon-class">Local Pubs</span>
+                    <input type="checkbox" name="pub" />
                 </li>
                 <li>
                     <span class="icon-large icon-coffe-cup" aria-hidden="true"></span>
                     <span class="glyphicon-class">Cafe</span>
+                    <input type="checkbox" name="cafe" />
                 </li>
                 <li>
                     <span class="icon-large icon-group" aria-hidden="true"></span>
                     <span class="glyphicon-class">Group travel</span>
+                    <input type="checkbox" name="group" />
                 </li>
                 <li>
                     <span class="icon-large icon-fast-food" aria-hidden="true"></span>
                     <span class="glyphicon-class">Quick bite</span>
+                    <input type="checkbox" name="fast_food" />
                 </li>
                 <li>
                     <span class="icon-large icon-bp" aria-hidden="true"></span>
                     <span class="glyphicon-class">Special Deal</span>
+                    <input type="checkbox" name="deak" />
                 </li>
                 <li>
                     <span class="icon-large icon-magic" aria-hidden="true"></span>
                     <span class="glyphicon-class">Something Special</span>
+                    <input type="checkbox" name="special" />
                 </li>
              </ul>
         </div>
@@ -175,11 +181,14 @@
             <input class="input-lg" type="email" name="email_address" placeholder="Your email address"/>
         </div>
         <div class="divider"></div>
-        <p class="text-center"><a class="btn btn-primary btn-lg" href="/#section2">Plan for me the itinerary</a></p>
+        <div class="text-center">
+            <input type="submit" class="btn btn-primary btn-lg" value="Plan for me the itinerary" />
+        </div>
         <hr />
         <div class="divider"></div>
     </div>
 </div>
+</form>
 
 <div class="divider"></div>
 

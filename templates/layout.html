@@ -10,9 +10,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/site.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.icon-large.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap-datetimepicker.min.css' %}" />
     <script src="{% static 'assets/scripts/modernizr-2.6.2.js' %}"></script>
     <script src="{% static 'assets/scripts/jquery-1.10.2.min.js' %}"></script>
-    <script src="{% static 'assets/scripts/bootstrap-datetimepicker.min.css' %}"></script>
+    <script src="{% static 'assets/scripts/moment.js' %}"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 </head>
 
@@ -61,19 +62,19 @@
     <script src="{% static 'assets/scripts/respond.js' %}"></script>
     <script src="{% static 'assets/scripts/google.places.js' %}"></script>
     <script src="{% static 'assets/scripts/bootstrap.min.js' %}"></script>
-    <script src="{% static 'assets/scripts/bootstrap-datetimepicker.js' %}"></script>
+    <script src="{% static 'assets/scripts/bootstrap-datetimepicker.min.js' %}" charset="UTF-8"></script>
 
     <script type="text/javascript">
-    $('.form_datetime').datetimepicker({
-        //language:  'fr',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		forceParse: 0,
-        showMeridian: 1
-    });
+        $('.form_datetime').datetimepicker({
+            //language:  'fr',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            showMeridian: 1
+        });
     </script>
 
 {% block scripts %}{% endblock %}

@@ -12,15 +12,15 @@ from locations import *
 
 
 def search(request):
-    location = request.POST.get('searchplace')
-    geolocation = request.POST.get('searchgeoloc')
+    location = 'London' #request.POST.get('searchplace')
+    geolocation = LONDON_GEO
 
     #f = open(fsqr_json_file, 'r')
     #data = json.load(f)
     #shop = data['response']['venues']
     #f.close()
     print location
-    fsqr_shops = get_location('foursquare', location)
+    fsqr_shops = []#get_location('foursquare', geolocation)
 
     assert isinstance(request, HttpRequest)
     return render(

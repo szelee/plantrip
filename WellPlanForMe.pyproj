@@ -38,6 +38,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="locations\models.py" />
+    <Compile Include="locations\recommendation.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="locations\tests.py" />
     <Compile Include="locations\views.py" />
     <Compile Include="locations\__init__.py" />
@@ -91,7 +94,6 @@
     <Folder Include="static\css\" />
     <Folder Include="templates\" />
     <Folder Include="static\" />
-    <Folder Include="static\css-backup\" />
     <Folder Include="static\fonts\" />
     <Folder Include="static\images\" />
     <Folder Include="static\scripts\" />
@@ -147,11 +149,9 @@
     <Content Include="app\templates\app\layout.html" />
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
-    <Content Include="static\css-backup\bootstrap.css" />
-    <Content Include="static\css-backup\bootstrap.min.3.2.css" />
-    <Content Include="static\css-backup\bootstrap.min.css" />
     <Content Include="static\css\bootstrap-datetimepicker.css" />
     <Content Include="static\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="static\scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="static\css\bootstrap.icon-large.min.css" />
     <Content Include="static\css\site.css" />
     <Content Include="static\css\bootstrap-theme.css" />
@@ -191,8 +191,8 @@
     <Content Include="static\images\world_2.jpg" />
     <Content Include="static\images\world_3.jpg" />
     <Content Include="static\scripts\bootstrap-datetimepicker.js" />
-    <Content Include="static\scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="static\scripts\google.places.js" />
+    <Content Include="static\scripts\moment.js" />
     <Content Include="static\scripts\scripts.js" />
     <Content Include="templates\account\account_inactive.html" />
     <Content Include="templates\account\base.html" />
