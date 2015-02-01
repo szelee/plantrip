@@ -117,7 +117,6 @@
     <Content Include="app\static\app\images\bath.JPG" />
     <Content Include="app\static\app\images\leeds_castle-small.jpg" />
     <Content Include="app\templates\app\index - Copy.html" />
-    <Content Include="app\templates\app\index-owl.html" />
     <Content Include="locations\templates\locations\home.html" />
     <Content Include="locations\templates\locations\index.html" />
     <Content Include="requirements.txt" />
