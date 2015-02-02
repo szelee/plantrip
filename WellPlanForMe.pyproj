@@ -119,6 +119,8 @@
     <Content Include="app\templates\app\index - Copy.html" />
     <Content Include="locations\templates\locations\home.html" />
     <Content Include="locations\templates\locations\index.html" />
+    <Content Include="locations\templates\locations\landing.html" />
+    <Content Include="locations\templates\locations\layout.html" />
     <Content Include="requirements.txt" />
     <Content Include="app\static\app\content\bootstrap.css" />
     <Content Include="app\static\app\content\bootstrap.min.css" />
@@ -150,6 +152,8 @@
     <Content Include="app\templates\app\loginpartial.html" />
     <Content Include="static\css\bootstrap-datetimepicker.css" />
     <Content Include="static\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="static\css\magister.css" />
+    <Content Include="static\images\background-london.jpg" />
     <Content Include="static\scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="static\css\bootstrap.icon-large.min.css" />
     <Content Include="static\css\site.css" />
@@ -170,8 +174,6 @@
     <Content Include="static\images\ico\glyphicons-565-underground.png" />
     <Content Include="static\images\ico\glyphicons.png" />
     <Content Include="static\images\AjaxLoader.gif" />
-    <Content Include="static\images\background-bath.jpg" />
-    <Content Include="static\images\background-geneva.jpg" />
     <Content Include="static\images\chicilian-1.jpg" />
     <Content Include="static\images\grabbing.png" />
     <Content Include="static\images\ico\apple-touch-icon-114-precomposed.png" />
@@ -191,6 +193,8 @@
     <Content Include="static\images\world_3.jpg" />
     <Content Include="static\scripts\bootstrap-datetimepicker.js" />
     <Content Include="static\scripts\google.places.js" />
+    <Content Include="static\scripts\magister.js" />
+    <Content Include="static\scripts\modernizr.custom.72241.js" />
     <Content Include="static\scripts\moment.js" />
     <Content Include="static\scripts\scripts.js" />
     <Content Include="templates\account\account_inactive.html" />

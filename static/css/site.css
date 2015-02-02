@@ -1,6 +1,10 @@
 ﻿body {
-    padding-top: 50px;
+    min-height:100%; 
+    background:transparent;
+    padding-top: 5px;
     padding-bottom: 20px;
+    -webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -240,3 +244,4 @@ section {
     .carousel-caption .btn {
         text-shadow: none;
     }
+

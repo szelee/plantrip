@@ -21,6 +21,7 @@ urlpatterns = patterns('',
     url(r'^trips/create', 'trips.views.createtrip', name='create_trip'),
     url(r'^user/profile', 'userprofile.views.profile', name='user_profile'),
     url(r'^locations/search$', 'locations.views.search', name='location_search'),
+    url(r'^locations/landing', 'locations.views.landing', name='location_landing'),
     url(r'^login/$',
         'django.contrib.auth.views.login',
         {

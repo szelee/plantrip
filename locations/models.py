@@ -20,8 +20,14 @@ PREF_CHOICES = [
 
 class Location(models.Model):
     id = models.AutoField(primary_key=True)
-    Name = models.CharField(max_length = 255)
+    name = models.CharField(max_length = 255)
     coordinate = models.CharField(max_length = 255)
-    Address = []
-    subject = models.CharField(max_length=150)
-    message =  models.TextField()
+    address = models.TextField()
+    type = models.CharField(choices=PREF_CHOICES, max_length=150)
+    operating_hr =  models.TextField()
+    description = models.TextField()
+    rating = models.IntegerField()
+
+class Location_Attr(models.Model):
+    location = models.ForeignKey('Location')
+

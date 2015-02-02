@@ -35,3 +35,18 @@ def search(request):
             #'fsqr': fsqr_shops,
         })
     )
+
+def landing(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        "locations/landing.html",
+        context_instance = RequestContext(request,
+        {
+            'title': 'Email',
+            'message': 'Recommended places gathered from different website',
+            'year':datetime.now().year,
+            #'shop': fsqr_shops,
+            #'fsqr': fsqr_shops,
+        })
+    )
