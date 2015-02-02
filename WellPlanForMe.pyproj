@@ -152,7 +152,12 @@
     <Content Include="app\templates\app\loginpartial.html" />
     <Content Include="static\css\bootstrap-datetimepicker.css" />
     <Content Include="static\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="static\css\fontello.css" />
     <Content Include="static\css\magister.css" />
+    <Content Include="static\fonts\fontello.eot" />
+    <Content Include="static\fonts\fontello.svg" />
+    <Content Include="static\fonts\fontello.ttf" />
+    <Content Include="static\fonts\fontello.woff" />
     <Content Include="static\images\background-london.jpg" />
     <Content Include="static\scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="static\css\bootstrap.icon-large.min.css" />
