@@ -159,6 +159,8 @@
     <Content Include="static\fonts\fontello.ttf" />
     <Content Include="static\fonts\fontello.woff" />
     <Content Include="static\images\background-london.jpg" />
+    <Content Include="static\images\london-1.jpg" />
+    <Content Include="static\images\london-2.jpg" />
     <Content Include="static\scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="static\css\bootstrap.icon-large.min.css" />
     <Content Include="static\css\site.css" />
@@ -173,11 +175,6 @@
     <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="static\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="static\images\ico\glyphicons-330-soccer-ball.png" />
-    <Content Include="static\images\ico\glyphicons-453-shop.png" />
-    <Content Include="static\images\ico\glyphicons-506-piggy-bank.png" />
-    <Content Include="static\images\ico\glyphicons-565-underground.png" />
-    <Content Include="static\images\ico\glyphicons.png" />
     <Content Include="static\images\AjaxLoader.gif" />
     <Content Include="static\images\chicilian-1.jpg" />
     <Content Include="static\images\grabbing.png" />
@@ -186,16 +183,9 @@
     <Content Include="static\images\ico\apple-touch-icon-57-precomposed.png" />
     <Content Include="static\images\ico\apple-touch-icon-72-precomposed.png" />
     <Content Include="static\images\ico\favicon.ico" />
-    <Content Include="static\images\ico\social-3-google-plus.png" />
-    <Content Include="static\images\ico\social-31-facebook.png" />
-    <Content Include="static\images\ico\social-32-twitter.png" />
-    <Content Include="static\images\ico\social-33-instagram.png" />
     <Content Include="static\images\ldn-canal.jpg" />
     <Content Include="static\images\london-eye.jpg" />
     <Content Include="static\images\vienna-1.jpg" />
-    <Content Include="static\images\world_1.jpg" />
-    <Content Include="static\images\world_2.jpg" />
-    <Content Include="static\images\world_3.jpg" />
     <Content Include="static\scripts\bootstrap-datetimepicker.js" />
     <Content Include="static\scripts\google.places.js" />
     <Content Include="static\scripts\magister.js" />
