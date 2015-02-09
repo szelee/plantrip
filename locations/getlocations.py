@@ -3,6 +3,7 @@ from allauth.socialaccount.models import SocialApp
 import json, requests
 from datetime import date, datetime
 from django.http import HttpResponseRedirect
+from factual import Factual
 
 #fsqr_venue_url = "https://api.foursquare.com/v2/venues/search"
 today_date = date.today()
@@ -65,11 +66,35 @@ def get_location(provider, location):
     elif provider == 'google':
         data = gplaces_api(location)
         shops = data['results']
-        print data
-        print shops
+
+    elif provider == 'factual':
+        data = factual_api(location)
+        shops = data
 
     return shops
 
+def factual_api(location):
+    factual = Factual(FACTUAL_KEY, FACTUAL_SECRET)
+    location = 'london'
+    #SLL - temporary commented schema as prototype will get the information immediately from the factaul db
+    #s = factual.table('places').schema()
+    
+    places = factual.table('places')
+    popular = places.filters({'$and':[{'category_ids':{'$includes_any':[107,308,371]}},{'locality': location}]}).sort({'placerank':800}).data()
+    restaurant = places.filters({'$and':[{'category_ids':{'$includes_any':[312,338]}},{'locality': location}]}).sort({'placerank':1000}).data()
+    to_do = places.filters({'$and':[{'category_ids':{'$includes_any':[317,147,169]}},{'locality': location}]}).sort({'placerank':1000}).data()
+
+    #f = open('locations\popular_places.json', 'r')
+    #popular = json.load(f)
+    #restaurant = {}
+    #to_do = {}
+
+    result = {}
+    result['popular'] = popular
+    result['restaurant'] = restaurant
+    result['to_do'] = to_do
+    
+    return result
 
 
 

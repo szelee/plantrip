@@ -8,6 +8,7 @@
 
 #python compiled
 *.pyc
+/env/
 
 #test result
 processemail/emails

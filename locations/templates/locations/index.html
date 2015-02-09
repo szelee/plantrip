@@ -1,9 +1,165 @@
-<html>
-<head><title></title></head>
+{% extends "layout.html" %}
 
-<body>
+{% block content %}
+<div id="map-canvas"></div>
 
-{{ content }}
+<div class="container-fluid" id="main">
+    <div class="row">
+        <div class="col-xs-5 panel-group" id="left"> <!--list of places-->
+        {% if popular %}
+            <div class="row">
+                <div class="col-xs-9">
+                    <h2>Suggestions according to your stay</h2>
+                </div>
+                <div class="col-xs-1">
+                    <h2><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                    <input type="hidden" name="update" /></h2>
+                </div>
+                <div class="col-xs-1">
+                    <h2><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <input type="hidden" name="next" /></h2>
+                </div>
+            </div>
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h4>Popular</h4>
+                </div>
+                <!--Displaying the attractions-->
+                {% for item in popular %}
+                <div class="panel-body">
+                    <span id="map-input">{{ item.name }}</span> <a class="small" href="{{ item.website }}">Website</a>
+                    <p><b>Neighbourhood:</b> {{ item.post_town }}<br />
+                    <b>Operating hours:</b> {{ item.hours_display }}</p>
+                </div>                     
+                {% endfor %}
+            </div>
+        {% endif %}
+        <!--restaurants-->
+        {% if restaurant %}
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h4>Restaurants</h4>
+                </div>
+                {% for item in restaurant %}
+                <div class="panel-body">
+                    <span  id="map-input">{{ item.name }}</span>
+                    <p>Neighbourhood: {{ item.post_town }}<br />
+                    Website: {{ item.website }}<br />
+                    Operating hours: {{ item.hours_display }}</p>
+                </div>     
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if todo %}
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4>To Do</h4>
+                </div>
+                {% for item in todo %}
+                <div class="panel-body">
+                    <span  id="map-input">{{ item.name }}</span>
+                    <p>Neighbourhood: {{ item.post_town }}<br />
+                    Website: {{ item.website }}<br />
+                    Operating hours: {{ item.hours_display }}</p>
+                </div>     
+                {% endfor %}
+            </div>
+        {% endif %}
+        {# if (!popular) and (!restaurant) and (!todo) #}
+            <!--div class="row">
+                <div class="col-xs-9">
+                    <h2>No suggestion found</h2>
+                </div>
+                <div class="col-xs-1">
+                    <h2><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                    <input type="hidden" name="update" /></h2>
+                </div>
+                <div class="col-xs-1">
+                    <h2><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <input type="hidden" name="next" /></h2>
+                </div>
+            </div-->
+        {# endif #}
+        </div>
+        <div class="col-xs-7"><!--canvas location--></div>
+    </div>
+</div>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+<script type="text/javascript">
+    /* google maps */
+    google.maps.visualRefresh = true;
 
-</body>
-</html>
+    var map;
+    function initialize() {
+        var geocoder = new google.maps.Geocoder();
+        var address = $('#map-input').text(); /* change the map-input to your address */
+        var mapOptions = {
+            zoom: 12,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            scrollwheel: false
+        };
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        /*if (geocoder) {
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {*/
+        map.setCenter({lat: 51.500152,lng: -0.126236});
+
+                        /*var infowindow = new google.maps.InfoWindow(
+                            {
+                                content: address,
+                                map: map,
+                                position: results[0].geometry.location,
+                            });*/
+        {% if popular %}
+        {% for item in popular %}
+        {% if item.latitude %}
+        var marker = new google.maps.Marker({
+            position: {lat: {{ item.latitude }},lng: {{ item.longitude }}},
+            map: map,
+            title: "{{ item.name }}",
+        });
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        {% if restaurant %}
+        {% for item in restaurant %}
+        {% if item.latitude %}
+        var marker = new google.maps.Marker({
+            position: {lat: {{ item.latitude }},lng: {{ item.longitude }}},
+            map: map,
+            title: "{{ item.name }}",
+            icon: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+        });
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        {% if todo %}
+        {% for item in todo %}
+        {% if item.latitude %}        
+        var marker = new google.maps.Marker({
+            position: {lat: {{ item.latitude }},lng: {{ item.longitude }}},
+            map: map,
+            title: "{{ item.name }}",
+            icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+        });
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+                 /*   } else {
+                        alert("No results found");
+                    }
+                }
+            });
+        }*/
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    /* end google maps */
+</script>
+{% endblock %}
+
+

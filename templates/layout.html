@@ -14,10 +14,10 @@
     <script src="{% static 'assets/scripts/modernizr-2.6.2.js' %}"></script>
     <script src="{% static 'assets/scripts/jquery-1.10.2.min.js' %}"></script>
     <script src="{% static 'assets/scripts/moment.js' %}"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <!--script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script-->
 </head>
 
-<body onload="initialize()">
+<body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -51,7 +51,7 @@
     <!--div class="container"-->
 {% block content %}{% endblock %}
         <!--/div-->
-        <hr/>
+        
         <footer class="text-center">
             <p>&copy; {{ year }} - Well,PlanForMe</p>
         </footer>
@@ -63,6 +63,8 @@
     <script src="{% static 'assets/scripts/google.places.js' %}"></script>
     <script src="{% static 'assets/scripts/bootstrap.min.js' %}"></script>
     <script src="{% static 'assets/scripts/bootstrap-datetimepicker.min.js' %}" charset="UTF-8"></script>
+    
+    <script src="{% static 'assets/scripts/scripts.js' %}"></script>
 
     <script type="text/javascript">
         $('.form_datetime').datetimepicker({
@@ -81,3 +83,5 @@
 
 </body>
 </html>
+
+

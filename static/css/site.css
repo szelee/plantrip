@@ -1,8 +1,10 @@
 ﻿body {
-    min-height:100%; 
+    height:100%; 
     background:transparent;
-    padding-top: 5px;
+    padding-top: 50px;
     padding-bottom: 20px;
+    padding-left:0; /*SLL 08022015- added*/
+    padding-right: 0; /*SLL 08022015- added*/
     -webkit-font-smoothing: antialiased;
 	-webkit-overflow-scrolling: touch;
 }
@@ -51,7 +53,6 @@ input[type="checkbox"].input-validation-error {
     position: relative;
     top: 0;
 }
-
 
 .container .credit {
     margin: 20px 0;
@@ -245,3 +246,40 @@ section {
         text-shadow: none;
     }
 
+#map-canvas {
+  	width: 60%; 
+  	height: 90%;
+	margin: 0;
+    right: 0;
+    position: absolute;
+}
+
+#main, #main>.row {
+	height:90%;
+}
+
+#left {
+	height: 90%;
+    width: 40%;
+    /*margin: 0;*/
+    padding-right:0;
+    padding-left:0;
+    overflow-y:scroll;
+    position: fixed;
+}
+
+footer {
+    background-color: #F3F3F3;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 5%;
+}
+
+* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}

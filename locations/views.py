@@ -19,20 +19,20 @@ def search(request):
     #data = json.load(f)
     #shop = data['response']['venues']
     #f.close()
-    print location
-    fsqr_shops = []#get_location('foursquare', geolocation)
-
+    places = get_location('factual', geolocation)
+    
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        "locations/home.html",
+        "locations/index.html",
         context_instance = RequestContext(request,
         {
             'title': location,
             'message': 'Recommended places gathered from different website',
             'year':datetime.now().year,
-            'shop': fsqr_shops,
-            #'fsqr': fsqr_shops,
+            'popular': places['popular'],
+            'restaurant': places['restaurant'],
+            'todo': places['to_do'],
         })
     )
 
