@@ -8,13 +8,12 @@
 
 #python compiled
 *.pyc
-/env/
 
 #test result
 processemail/emails
 
 #virtual environments
-env
+env/
 
 # Build results
 [Dd]ebug/
