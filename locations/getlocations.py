@@ -86,7 +86,7 @@ def factual_api(location):
 
     #f = open('locations\popular_places.json', 'r')
     #popular = json.load(f)
-    popular = process_photos(explore_fsqr())
+    popular = process_tips(process_photos(explore_fsqr()))
     restaurant = {}
     to_do = {}
 
@@ -131,4 +131,16 @@ def process_photos(places):
             elif place['venue']['photos']:
                 place['venue']['photos']['photoBig'] = place['venue']['photos']['items'][0]['prefix'] + "110x110" + place['venue']['photos']['items'][0]['suffix']
 
+    return places
+
+def process_tips(places):
+
+    if places:
+        for place in places:
+            if place['tips']:
+                place['tip'] = {}
+                place['tip']['text'] = place['tips'][0]['text']
+                place['tip']['userPhoto'] = place['tips'][0]['user']['photo']['prefix'] + "30x30" + place['tips'][0]['user']['photo']['suffix']
+                place['tip']['firstName'] = place['tips'][0]['user']['firstName']
+    
     return places
