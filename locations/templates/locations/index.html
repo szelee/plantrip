@@ -22,28 +22,34 @@
             </div>
             <div class="panel panel-danger">
                 <div class="panel-heading">
-                    <h4>Popular</h4>
+                
+                    <h4>Popular <span class="badge">{{ popular|length }}</span></h4>
                 </div>
                 <!--Displaying the attractions-->
                 {% for item in popular %}
                 <div class="panel-body">
-                    <div class="col-xs-8">
-                    <span id="map-input">{{ item.venue.name }}</span> <a class="small" href="{{ item.venue.url }}">Website</a>
+                    <div class="col-lg-10">
+                    <a href="{{ item.venue.url }}"><strong>{{ item.venue.name }}</strong></a>  Rating: <b>{{ item.venue.rating }}</b>
                     <p><b>Location:</b> {{ item.venue.location.address }}<br />
                     {% if item.tips %}
-                    <b>Tips:</b><em> {{ item.tip.text }}</em> by {{ item.tip.firstName }}<img src="{{ item.tip.userPhoto }}" /></p>
+                    <b>Tips:</b><em> {{ item.tip.text }}</em> by {{ item.tip.firstName }}<img class="img-responsive" src="{{ item.tip.userPhoto }}" /></p>
                     {% endif %}
                     </div>
-                    <div class="col-xs-1">
-                        <h2><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-                        <input type="hidden" name="next" value="up-{{ item.venue.name }}" /></h2>
-                    </div>
-                    <div class="col-xs-1">
-                        <h2><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-                        <input type="hidden" name="next" value="down-{{ item.venue.name }}" /></h2>
-                    </div>
-                    <div class="col-xs-1">
-                        <img src="{{ item.venue.photos.photoBig }}" />
+                    <div class="col-md-2">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <h3>
+                                    <i class="glyphicon glyphicon-thumbs-up" rel="tooltip" title="Like" aria-hidden="true">
+                                        <input type="hidden" name="next"  value="up-{{ item.venue.name }}" />
+                                    </i>
+                                    <i class="glyphicon glyphicon-thumbs-down" rel="tooltip" title="Don't Like" aria-hidden="true">
+                                        <input type="hidden" name="next" value="down-{{ item.venue.name }}" />
+                                    </i>
+                                    
+                                </h3>
+                            </div>
+                            <img src="{{ item.venue.photos.photoBig }}" />
+                        </div>
                     </div>
                 </div>                     
                 {% endfor %}

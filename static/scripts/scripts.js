@@ -8,3 +8,14 @@ $('[data-toggle=collapse]').click(function(){
 });
 });
 
+$("[rel='tooltip']").tooltip();
+
+$('.thumbnail').hover(
+    function () {
+        $(this).find('.caption').slideDown(110); //.fadeIn(250)
+    },
+    function () {
+        $(this).find('.caption').slideUp(110); //.fadeOut(205)
+    }
+);
+
