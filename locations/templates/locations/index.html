@@ -27,9 +27,22 @@
                 <!--Displaying the attractions-->
                 {% for item in popular %}
                 <div class="panel-body">
-                    <span id="map-input">{{ item.name }}</span> <a class="small" href="{{ item.website }}">Website</a>
-                    <p><b>Neighbourhood:</b> {{ item.post_town }}<br />
-                    <b>Operating hours:</b> {{ item.hours_display }}</p>
+                    <div class="col-xs-8">
+                    <span id="map-input">{{ item.venue.name }}</span> <a class="small" href="{{ item.venue.url }}">Website</a>
+                    <p><b>Location:</b> {{ item.venue.location.address }}<br />
+                    <b>Operating hours:</b> </p>
+                    </div>
+                    <div class="col-xs-1">
+                        <h2><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                        <input type="hidden" name="next" value="up-{{ item.venue.name }}" /></h2>
+                    </div>
+                    <div class="col-xs-1">
+                        <h2><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+                        <input type="hidden" name="next" value="down-{{ item.venue.name }}" /></h2>
+                    </div>
+                    <div class="col-xs-1">
+                        <img src="{{ item.venue.photos.photoBig }}" />
+                    </div>
                 </div>                     
                 {% endfor %}
             </div>
@@ -50,6 +63,7 @@
                 {% endfor %}
             </div>
         {% endif %}
+        <!--To do items-->
         {% if todo %}
             <div class="panel panel-info">
                 <div class="panel-heading">
@@ -84,6 +98,7 @@
         <div class="col-xs-7"><!--canvas location--></div>
     </div>
 </div>
+
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
 <script type="text/javascript">
     /* google maps */
@@ -94,7 +109,7 @@
         var geocoder = new google.maps.Geocoder();
         var address = $('#map-input').text(); /* change the map-input to your address */
         var mapOptions = {
-            zoom: 12,
+            zoom: 14,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             scrollwheel: false
         };
@@ -114,9 +129,9 @@
                             });*/
         {% if popular %}
         {% for item in popular %}
-        {% if item.latitude %}
+        {% if item.venue.location.lat %}
         var marker = new google.maps.Marker({
-            position: {lat: {{ item.latitude }},lng: {{ item.longitude }}},
+            position: {lat: {{ item.venue.location.lat }},lng: {{ item.venue.location.lng }}},
             map: map,
             title: "{{ item.name }}",
         });

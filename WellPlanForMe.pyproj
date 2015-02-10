@@ -118,6 +118,7 @@
     <Content Include="app\static\app\images\leeds_castle-small.jpg" />
     <Content Include="app\templates\app\index - Copy.html" />
     <Content Include="locations\templates\locations\home.html" />
+    <Content Include="locations\templates\locations\index- Copy.html" />
     <Content Include="locations\templates\locations\index.html" />
     <Content Include="locations\templates\locations\landing.html" />
     <Content Include="locations\templates\locations\layout.html" />
