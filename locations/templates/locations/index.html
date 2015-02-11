@@ -28,14 +28,14 @@
                 <!--Displaying the attractions-->
                 {% for item in popular %}
                 <div class="panel-body">
-                    <div class="col-lg-10">
+                    <div class="col-lg-9">
                     <a href="{{ item.venue.url }}"><strong>{{ item.venue.name }}</strong></a>  Rating: <b>{{ item.venue.rating }}</b>
                     <p><b>Location:</b> {{ item.venue.location.address }}<br />
                     {% if item.tips %}
                     <b>Tips:</b><em> {{ item.tip.text }}</em> by {{ item.tip.firstName }}<img class="img-responsive" src="{{ item.tip.userPhoto }}" /></p>
                     {% endif %}
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-lg-3">
                         <div class="thumbnail">
                             <div class="caption">
                                 <h3>
