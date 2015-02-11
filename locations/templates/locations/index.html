@@ -20,20 +20,23 @@
                     <input type="hidden" name="next" /></h2>
                 </div>
             </div>
-            <div class="panel panel-danger">
+            <div class="panel-danger" id="panel1">
                 <div class="panel-heading">
-                
-                    <h4>Popular <span class="badge">{{ popular|length }}</span></h4>
+                    <a data-toggle="collapse" data-parent="#left" href="#collapseOne">
+                    <h4 class="panel-title">Popular <span class="badge">{{ popular|length }}</span></h4></a>
                 </div>
                 <!--Displaying the attractions-->
-                {% for item in popular %}
+                <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
+                {% for item in popular %}
+                
                     <div class="col-lg-9">
                     <a href="{{ item.venue.url }}"><strong>{{ item.venue.name }}</strong></a>  Rating: <b>{{ item.venue.rating }}</b>
                     <p><b>Location:</b> {{ item.venue.location.address }}<br />
                     {% if item.tips %}
                     <b>Tips:</b><em> {{ item.tip.text }}</em> by {{ item.tip.firstName }}<img class="img-responsive" src="{{ item.tip.userPhoto }}" /></p>
                     {% endif %}
+                        <hr />
                     </div>
                     <div class="col-lg-3">
                         <div class="thumbnail">
@@ -51,8 +54,10 @@
                             <img src="{{ item.venue.photos.photoBig }}" />
                         </div>
                     </div>
-                </div>                     
+                                  
                 {% endfor %}
+                    </div>
+                </div>   
             </div>
         {% endif %}
         <!--restaurants-->
