@@ -23,11 +23,13 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'wellplanforme$wellplanforme',
-        'USER': 'wellplanforme',
-        'PASSWORD': 'Sz3L33La123',
-        'HOST': 'mysql.server',
+        #'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'wellplanforme',
+        'USER': 'szelee',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -90,7 +92,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    ('assets', '/home/wellplanforme/plantrip/static'),
+    ('assets', 'D:/Django Projects/WellPlanForMe/static'),
     #'https://www.dropbox.com/sh/z97r9ovv8l26nhi/AAC3PeNyaQeYUDxPUZcN1VD0a?dl=0'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
@@ -148,6 +150,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     # allauth specific context processors
     "allauth.account.context_processors.account",
     "allauth.socialaccount.context_processors.socialaccount",
+    "django.core.context_processors.request"
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -172,6 +175,7 @@ INSTALLED_APPS = (
     'trips',
     'userprofile',
     'locations',
+    'schedule',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
